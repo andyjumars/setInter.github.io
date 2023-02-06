@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>setInterval定時器clearInterval</title>
+</head>
+<body>
+	<button id="start">開啟</button>
+	<button id="stop">關閉</button>
+
+	<script type="text/javascript">
+
+		var start = document.getElementById('start');
+		var stop = document.getElementById('stop');
+		num = 0,timer = null;
+		start.onclick = function(){
+ 			
+ 			//當重複點擊，就先清除第一次開啟的計時點擊，避免用戶一直點擊
+ 			clearInterval(timer);
+			
+			timer = setInterval(function(){
+
+				num++;
+
+				console.log(num);
+
+			},1000)
+		}
+
+		stop.onclick = function(){
+
+			clearInterval(timer);
+
+
+			
+
+		}
+
+			
+
+
+		
+
+	</script>
+</body>
+</html>
